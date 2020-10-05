@@ -1,0 +1,27 @@
+{
+  "haryaliApp": {
+    "sellerImages": {
+      "home": {
+        "title": "Images",
+        "createLabel": "नया Images बनाएँ",
+        "createOrEditLabel": "Images बनाएँ या संपादित करें",
+        "search": "Images खोजें",
+        "notFound": "No Images found"
+      },
+      "created": "एक नया Images [identifier: {{ param }}] तैयार है",
+      "updated": "एक Images [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Images [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Images [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Images"
+      },
+      "image": "Image",
+      "thumbImage": "Thumb Image",
+      "alt": "Alt",
+      "title": "Title",
+      "product": "Product"
+    }
+  }
+}

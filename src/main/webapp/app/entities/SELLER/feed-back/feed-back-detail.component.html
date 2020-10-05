@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="feedBack">
+            <h2><span jhiTranslate="haryaliApp.sellerFeedBack.detail.title">Feed Back</span> {{ feedBack.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="haryaliApp.sellerFeedBack.rating" [ngbTooltip]="'haryaliApp.sellerFeedBack.help.rating' | translate">Rating</span></dt>
+                <dd>
+                    <span>{{ feedBack.rating }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerFeedBack.userName">User Name</span></dt>
+                <dd>
+                    <span>{{ feedBack.userName }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerFeedBack.userComments">User Comments</span></dt>
+                <dd>
+                    <span>{{ feedBack.userComments }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerFeedBack.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="feedBack.productId">
+                        <a [routerLink]="['/product', feedBack.productId, 'view']">{{ feedBack.productId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/feed-back', feedBack.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

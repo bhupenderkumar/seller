@@ -1,0 +1,191 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-nursery-heading" jhiTranslate="haryaliApp.sellerNursery.home.createOrEditLabel">Create or edit a Nursery</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.nurseryName" for="field_nurseryName">Nursery Name</label>
+                    <input type="text" class="form-control" name="nurseryName" id="field_nurseryName"
+                           formControlName="nurseryName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.houseNo" for="field_houseNo">House No</label>
+                    <input type="text" class="form-control" name="houseNo" id="field_houseNo"
+                           formControlName="houseNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.salutation" for="field_salutation">Salutation</label>
+                    <input type="text" class="form-control" name="salutation" id="field_salutation"
+                           formControlName="salutation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.firstName" for="field_firstName">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="field_firstName"
+                           formControlName="firstName"/>
+                    <div *ngIf="editForm.get('firstName')!.invalid && (editForm.get('firstName')!.dirty || editForm.get('firstName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('firstName')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.lastName" for="field_lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                           formControlName="lastName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.middleName" for="field_middleName">Middle Name</label>
+                    <input type="text" class="form-control" name="middleName" id="field_middleName"
+                           formControlName="middleName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.streetNo" for="field_streetNo">Street No</label>
+                    <input type="text" class="form-control" name="streetNo" id="field_streetNo"
+                           formControlName="streetNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.districtNo" for="field_districtNo">District No</label>
+                    <input type="text" class="form-control" name="districtNo" id="field_districtNo"
+                           formControlName="districtNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.city" for="field_city">City</label>
+                    <input type="text" class="form-control" name="city" id="field_city"
+                           formControlName="city"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.state" for="field_state">State</label>
+                    <input type="text" class="form-control" name="state" id="field_state"
+                           formControlName="state"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.country" for="field_country">Country</label>
+                    <select class="form-control" name="country" formControlName="country" id="field_country">
+                        <option value="INDIA">{{ 'haryaliApp.COUNTRY.INDIA' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.latitude" for="field_latitude">Latitude</label>
+                    <input type="number" class="form-control" name="latitude" id="field_latitude"
+                           formControlName="latitude"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.longitude" for="field_longitude">Longitude</label>
+                    <input type="number" class="form-control" name="longitude" id="field_longitude"
+                           formControlName="longitude"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.addharNo" for="field_addharNo">Addhar No</label>
+                    <input type="text" class="form-control" name="addharNo" id="field_addharNo"
+                           formControlName="addharNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.panCardNo" for="field_panCardNo">Pan Card No</label>
+                    <input type="text" class="form-control" name="panCardNo" id="field_panCardNo"
+                           formControlName="panCardNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.payMentMode" for="field_payMentMode">Pay Ment Mode</label>
+                    <select class="form-control" name="payMentMode" formControlName="payMentMode" id="field_payMentMode">
+                        <option value="ONLINE">{{ 'haryaliApp.PayMentMode.ONLINE' | translate }}</option>
+                        <option value="UPI_ID">{{ 'haryaliApp.PayMentMode.UPI_ID' | translate }}</option>
+                        <option value="CASH">{{ 'haryaliApp.PayMentMode.CASH' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.upiId" for="field_upiId">Upi Id</label>
+                    <input type="text" class="form-control" name="upiId" id="field_upiId"
+                           formControlName="upiId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.payMentDuration" for="field_payMentDuration">Pay Ment Duration</label>
+                    <select class="form-control" name="payMentDuration" formControlName="payMentDuration" id="field_payMentDuration">
+                        <option value="TEN">{{ 'haryaliApp.PayMentDuration.TEN' | translate }}</option>
+                        <option value="FIFTEEN">{{ 'haryaliApp.PayMentDuration.FIFTEEN' | translate }}</option>
+                        <option value="THIRTY">{{ 'haryaliApp.PayMentDuration.THIRTY' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.accountNo" for="field_accountNo">Account No</label>
+                    <input type="text" class="form-control" name="accountNo" id="field_accountNo"
+                           formControlName="accountNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.bankIFSC" for="field_bankIFSC">Bank IFSC</label>
+                    <input type="text" class="form-control" name="bankIFSC" id="field_bankIFSC"
+                           formControlName="bankIFSC"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.bankName" for="field_bankName">Bank Name</label>
+                    <input type="text" class="form-control" name="bankName" id="field_bankName"
+                           formControlName="bankName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.createdDate" for="field_createdDate">Created Date</label>
+                    <div class="input-group">
+                        <input id="field_createdDate" type="text" class="form-control" name="createdDate" ngbDatepicker #createdDateDp="ngbDatepicker" formControlName="createdDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="createdDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.updatedDate" for="field_updatedDate">Updated Date</label>
+                    <div class="input-group">
+                        <input id="field_updatedDate" type="text" class="form-control" name="updatedDate" ngbDatepicker #updatedDateDp="ngbDatepicker" formControlName="updatedDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="updatedDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerNursery.userName" for="field_userName">User Name</label>
+                    <input type="text" class="form-control" name="userName" id="field_userName"
+                           formControlName="userName"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

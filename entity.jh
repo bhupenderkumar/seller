@@ -1,0 +1,103 @@
+
+enum PayMentMode {
+  ONLINE, UPI_ID , CASH
+}
+enum PayMentDuration {
+  TEN, FIFTEEN, THIRTY
+}
+enum COUNTRY {
+  INDIA
+}
+entity Nursery {
+  nurseryName String
+  houseNo String 
+  salutation String 
+  firstName String  required
+  lastName String 
+  middleName String
+  streetNo String 
+  districtNo String 
+  city String 
+  state String 
+  country COUNTRY
+  latitude Double 
+  longitude Double   
+  addharNo String 
+  panCardNo String 
+  payMentMode PayMentMode
+  upiId String 
+  payMentDuration PayMentDuration
+  accountNo String 
+  bankIFSC String 
+  bankName String 
+  createdDate LocalDate
+  updatedDate LocalDate
+  userName String
+}
+enum ProductType {
+  ARTIFICIAL_PLANT(ARTIFICIAL_PLANT), SEED , INDOOR_PLANT , OUT_DOOR_PLANT , MAINTAINENCE
+}
+entity Product {
+  productName String  required minlength(5) maxlength(500) 
+  productDescription String required  maxlength(3999)
+  price Double required min(10) max(1000)
+  approval Approval
+  showStatus Boolean
+  productType ProductType
+  video Blob
+  productDate LocalDate 
+  updatedDate LocalDate
+  userName String 
+}
+/**
+ * The Enter the entity name entity.
+ * @author A true hipster
+ */
+entity FeedBack {
+  /** fieldName */
+  rating Integer
+  userName String
+  userComments String required minlength(1) maxlength(3999)
+}
+
+
+
+enum Approval {
+  APPROVED, IN_PROGRESS, DECLINED
+}
+
+entity Images {
+  image ImageBlob maxbytes(20000000)
+  thumbImage ImageBlob 
+  alt String maxlength(500)
+  title String maxlength(500)
+}
+relationship OneToMany {
+  Product{images} to Images
+  Nursery to Product
+  Product{rating} to FeedBack
+  Nursery{transactions} to Transaction{nursery}
+ 
+}
+entity Quote1 {
+  symbol String required unique
+  price BigDecimal required
+  lastTrade ZonedDateTime required
+}
+
+entity Transaction { 
+  userName String 
+  transactionAmount Double
+  transactionDate LocalDate
+  transactionMethod PayMentMode
+  processedBy String 
+  
+
+
+}
+dto * with mapstruct
+paginate * with infinite-scroll
+service * with serviceImpl
+microservice * with SELLER
+filter *
+clientRootFolder * with SELLER

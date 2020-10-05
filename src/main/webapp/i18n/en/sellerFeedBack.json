@@ -1,0 +1,29 @@
+{
+  "haryaliApp": {
+    "sellerFeedBack": {
+      "home": {
+        "title": "Feed Backs",
+        "createLabel": "Create a new Feed Back",
+        "createOrEditLabel": "Create or edit a Feed Back",
+        "search": "Search for Feed Back",
+        "notFound": "No Feed Backs found"
+      },
+      "created": "A new Feed Back is created with identifier {{ param }}",
+      "updated": "A Feed Back is updated with identifier {{ param }}",
+      "deleted": "A Feed Back is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Feed Back {{ id }}?"
+      },
+      "detail": {
+        "title": "Feed Back"
+      },
+      "rating": "Rating",
+      "userName": "User Name",
+      "userComments": "User Comments",
+      "product": "Product",
+      "help": {
+        "rating": "fieldName"
+      }
+    }
+  }
+}

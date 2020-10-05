@@ -1,0 +1,131 @@
+{
+  "name": "Nursery",
+  "fields": [
+    {
+      "fieldName": "nurseryName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "houseNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "salutation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "streetNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "districtNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "COUNTRY",
+      "fieldValues": "INDIA"
+    },
+    {
+      "fieldName": "latitude",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "longitude",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "addharNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "panCardNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "payMentMode",
+      "fieldType": "PayMentMode",
+      "fieldValues": "ONLINE,UPI_ID,CASH"
+    },
+    {
+      "fieldName": "upiId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "payMentDuration",
+      "fieldType": "PayMentDuration",
+      "fieldValues": "TEN,FIFTEEN,THIRTY"
+    },
+    {
+      "fieldName": "accountNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bankIFSC",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bankName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "nursery",
+      "relationshipName": "product"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "transaction",
+      "otherEntityRelationshipName": "nursery",
+      "relationshipName": "transactions"
+    }
+  ],
+  "changelogDate": "20201005110555",
+  "entityTableName": "nursery",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "SELLER",
+  "applications": "*",
+  "microserviceName": "SELLER"
+}

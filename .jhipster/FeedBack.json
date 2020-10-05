@@ -1,0 +1,43 @@
+{
+  "name": "FeedBack",
+  "fields": [
+    {
+      "fieldName": "rating",
+      "fieldType": "Integer",
+      "javadoc": "fieldName"
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userComments",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMinlength": "1",
+      "fieldValidateRulesMaxlength": "3999"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "rating",
+      "relationshipName": "product",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201005110755",
+  "javadoc": "The Enter the entity name entity.\\n@author A true hipster",
+  "entityTableName": "feed_back",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "SELLER",
+  "applications": "*",
+  "microserviceName": "SELLER"
+}

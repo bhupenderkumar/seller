@@ -1,0 +1,12 @@
+{
+  "haryaliApp": {
+    "ProductType": {
+      "null": "",
+      "ARTIFICIAL_PLANT": "ARTIFICIAL_PLANT",
+      "SEED": "SEED",
+      "INDOOR_PLANT": "INDOOR_PLANT",
+      "OUT_DOOR_PLANT": "OUT_DOOR_PLANT",
+      "MAINTAINENCE": "MAINTAINENCE"
+    }
+  }
+}

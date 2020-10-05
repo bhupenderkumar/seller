@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="product">
+            <h2><span jhiTranslate="haryaliApp.sellerProduct.detail.title">Product</span> {{ product.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="haryaliApp.sellerProduct.productName">Product Name</span></dt>
+                <dd>
+                    <span>{{ product.productName }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerProduct.productDescription">Product Description</span></dt>
+                <dd>
+                    <span>{{ product.productDescription }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerProduct.price">Price</span></dt>
+                <dd>
+                    <span>{{ product.price }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerProduct.approval">Approval</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'haryaliApp.Approval.' + product.approval }}">{{ product.approval }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerProduct.showStatus">Show Status</span></dt>
+                <dd>
+                    <span>{{ product.showStatus }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerProduct.productType">Product Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'haryaliApp.ProductType.' + product.productType }}">{{ product.productType }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerProduct.video">Video</span></dt>
+                <dd>
+                    <div *ngIf="product.video">
+                        <a (click)="openFile(product.videoContentType, product.video)" jhiTranslate="entity.action.open">open</a>
+                        {{ product.videoContentType }}, {{ byteSize(product.video) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerProduct.productDate">Product Date</span></dt>
+                <dd>
+                    <span>{{ product.productDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerProduct.updatedDate">Updated Date</span></dt>
+                <dd>
+                    <span>{{ product.updatedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerProduct.userName">User Name</span></dt>
+                <dd>
+                    <span>{{ product.userName }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerProduct.nursery">Nursery</span></dt>
+                <dd>
+                    <div *ngIf="product.nurseryId">
+                        <a [routerLink]="['/nursery', product.nurseryId, 'view']">{{ product.nurseryId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product', product.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

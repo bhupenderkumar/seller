@@ -1,0 +1,35 @@
+{
+  "haryaliApp": {
+    "sellerProduct": {
+      "home": {
+        "title": "Products",
+        "createLabel": "Create a new Product",
+        "createOrEditLabel": "Create or edit a Product",
+        "search": "Search for Product",
+        "notFound": "No Products found"
+      },
+      "created": "A new Product is created with identifier {{ param }}",
+      "updated": "A Product is updated with identifier {{ param }}",
+      "deleted": "A Product is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product {{ id }}?"
+      },
+      "detail": {
+        "title": "Product"
+      },
+      "productName": "Product Name",
+      "productDescription": "Product Description",
+      "price": "Price",
+      "approval": "Approval",
+      "showStatus": "Show Status",
+      "productType": "Product Type",
+      "video": "Video",
+      "productDate": "Product Date",
+      "updatedDate": "Updated Date",
+      "userName": "User Name",
+      "images": "Images",
+      "rating": "Rating",
+      "nursery": "Nursery"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "haryaliApp": {
+    "PayMentMode": {
+      "null": "",
+      "ONLINE": "ONLINE",
+      "UPI_ID": "UPI_ID",
+      "CASH": "CASH"
+    }
+  }
+}

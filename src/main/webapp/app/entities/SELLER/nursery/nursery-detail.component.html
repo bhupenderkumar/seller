@@ -1,0 +1,122 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="nursery">
+            <h2><span jhiTranslate="haryaliApp.sellerNursery.detail.title">Nursery</span> {{ nursery.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.nurseryName">Nursery Name</span></dt>
+                <dd>
+                    <span>{{ nursery.nurseryName }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.houseNo">House No</span></dt>
+                <dd>
+                    <span>{{ nursery.houseNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.salutation">Salutation</span></dt>
+                <dd>
+                    <span>{{ nursery.salutation }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{ nursery.firstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ nursery.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.middleName">Middle Name</span></dt>
+                <dd>
+                    <span>{{ nursery.middleName }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.streetNo">Street No</span></dt>
+                <dd>
+                    <span>{{ nursery.streetNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.districtNo">District No</span></dt>
+                <dd>
+                    <span>{{ nursery.districtNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.city">City</span></dt>
+                <dd>
+                    <span>{{ nursery.city }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.state">State</span></dt>
+                <dd>
+                    <span>{{ nursery.state }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.country">Country</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'haryaliApp.COUNTRY.' + nursery.country }}">{{ nursery.country }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.latitude">Latitude</span></dt>
+                <dd>
+                    <span>{{ nursery.latitude }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.longitude">Longitude</span></dt>
+                <dd>
+                    <span>{{ nursery.longitude }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.addharNo">Addhar No</span></dt>
+                <dd>
+                    <span>{{ nursery.addharNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.panCardNo">Pan Card No</span></dt>
+                <dd>
+                    <span>{{ nursery.panCardNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.payMentMode">Pay Ment Mode</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'haryaliApp.PayMentMode.' + nursery.payMentMode }}">{{ nursery.payMentMode }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.upiId">Upi Id</span></dt>
+                <dd>
+                    <span>{{ nursery.upiId }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.payMentDuration">Pay Ment Duration</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'haryaliApp.PayMentDuration.' + nursery.payMentDuration }}">{{ nursery.payMentDuration }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.accountNo">Account No</span></dt>
+                <dd>
+                    <span>{{ nursery.accountNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.bankIFSC">Bank IFSC</span></dt>
+                <dd>
+                    <span>{{ nursery.bankIFSC }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.bankName">Bank Name</span></dt>
+                <dd>
+                    <span>{{ nursery.bankName }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{ nursery.createdDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.updatedDate">Updated Date</span></dt>
+                <dd>
+                    <span>{{ nursery.updatedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerNursery.userName">User Name</span></dt>
+                <dd>
+                    <span>{{ nursery.userName }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/nursery', nursery.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

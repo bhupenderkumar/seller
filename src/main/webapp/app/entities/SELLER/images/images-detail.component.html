@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="images">
+            <h2><span jhiTranslate="haryaliApp.sellerImages.detail.title">Images</span> {{ images.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="haryaliApp.sellerImages.image">Image</span></dt>
+                <dd>
+                    <div *ngIf="images.image">
+                        <a (click)="openFile(images.imageContentType, images.image)">
+                            <img [src]="'data:' + images.imageContentType + ';base64,' + images.image" style="max-width: 100%;" alt="images image"/>
+                        </a>
+                        {{ images.imageContentType }}, {{ byteSize(images.image) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerImages.thumbImage">Thumb Image</span></dt>
+                <dd>
+                    <div *ngIf="images.thumbImage">
+                        <a (click)="openFile(images.thumbImageContentType, images.thumbImage)">
+                            <img [src]="'data:' + images.thumbImageContentType + ';base64,' + images.thumbImage" style="max-width: 100%;" alt="images image"/>
+                        </a>
+                        {{ images.thumbImageContentType }}, {{ byteSize(images.thumbImage) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerImages.alt">Alt</span></dt>
+                <dd>
+                    <span>{{ images.alt }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerImages.title">Title</span></dt>
+                <dd>
+                    <span>{{ images.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="haryaliApp.sellerImages.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="images.productId">
+                        <a [routerLink]="['/product', images.productId, 'view']">{{ images.productId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/images', images.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

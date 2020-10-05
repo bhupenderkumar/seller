@@ -1,0 +1,165 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-product-heading" jhiTranslate="haryaliApp.sellerProduct.home.createOrEditLabel">Create or edit a Product</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerProduct.productName" for="field_productName">Product Name</label>
+                    <input type="text" class="form-control" name="productName" id="field_productName"
+                           formControlName="productName"/>
+                    <div *ngIf="editForm.get('productName')!.invalid && (editForm.get('productName')!.dirty || editForm.get('productName')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productName')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productName')?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 5 }">
+                        This field is required to be at least 5 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productName')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 500 }">
+                        This field cannot be longer than 500 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerProduct.productDescription" for="field_productDescription">Product Description</label>
+                    <input type="text" class="form-control" name="productDescription" id="field_productDescription"
+                           formControlName="productDescription"/>
+                    <div *ngIf="editForm.get('productDescription')!.invalid && (editForm.get('productDescription')!.dirty || editForm.get('productDescription')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productDescription')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productDescription')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 3999 }">
+                        This field cannot be longer than 3999 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerProduct.price" for="field_price">Price</label>
+                    <input type="number" class="form-control" name="price" id="field_price"
+                           formControlName="price"/>
+                    <div *ngIf="editForm.get('price')!.invalid && (editForm.get('price')!.dirty || editForm.get('price')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('price')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('price')?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 10 }">
+                            This field should be at least 10.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('price')?.errors?.max" jhiTranslate="entity.validation.max" [translateValues]="{ max: 1000 }">
+                            This field cannot be more than 1000.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('price')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerProduct.approval" for="field_approval">Approval</label>
+                    <select class="form-control" name="approval" formControlName="approval" id="field_approval">
+                        <option value="APPROVED">{{ 'haryaliApp.Approval.APPROVED' | translate }}</option>
+                        <option value="IN_PROGRESS">{{ 'haryaliApp.Approval.IN_PROGRESS' | translate }}</option>
+                        <option value="DECLINED">{{ 'haryaliApp.Approval.DECLINED' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerProduct.showStatus" for="field_showStatus">Show Status</label>
+                    <input type="checkbox" class="form-control" name="showStatus" id="field_showStatus"
+                           formControlName="showStatus"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerProduct.productType" for="field_productType">Product Type</label>
+                    <select class="form-control" name="productType" formControlName="productType" id="field_productType">
+                        <option value="ARTIFICIAL_PLANT">{{ 'haryaliApp.ProductType.ARTIFICIAL_PLANT' | translate }}</option>
+                        <option value="SEED">{{ 'haryaliApp.ProductType.SEED' | translate }}</option>
+                        <option value="INDOOR_PLANT">{{ 'haryaliApp.ProductType.INDOOR_PLANT' | translate }}</option>
+                        <option value="OUT_DOOR_PLANT">{{ 'haryaliApp.ProductType.OUT_DOOR_PLANT' | translate }}</option>
+                        <option value="MAINTAINENCE">{{ 'haryaliApp.ProductType.MAINTAINENCE' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerProduct.video" for="field_video">Video</label>
+                    <div>
+                        <div *ngIf="editForm.get('video')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('videoContentType')!.value, editForm.get('video')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('videoContentType')!.value }}, {{ byteSize(editForm.get('video')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({video: null});editForm.patchValue({videoContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_video" (change)="setFileData($event, 'video', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="video" id="field_video"
+                           formControlName="video"/>
+                    <input type="hidden" class="form-control" name="videoContentType" id="field_videoContentType"
+                           formControlName="videoContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerProduct.productDate" for="field_productDate">Product Date</label>
+                    <div class="input-group">
+                        <input id="field_productDate" type="text" class="form-control" name="productDate" ngbDatepicker #productDateDp="ngbDatepicker" formControlName="productDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="productDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerProduct.updatedDate" for="field_updatedDate">Updated Date</label>
+                    <div class="input-group">
+                        <input id="field_updatedDate" type="text" class="form-control" name="updatedDate" ngbDatepicker #updatedDateDp="ngbDatepicker" formControlName="updatedDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="updatedDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerProduct.userName" for="field_userName">User Name</label>
+                    <input type="text" class="form-control" name="userName" id="field_userName"
+                           formControlName="userName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="haryaliApp.sellerProduct.nursery" for="field_nursery">Nursery</label>
+                    <select class="form-control" id="field_nursery" name="nursery" formControlName="nurseryId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="nurseryOption.id" *ngFor="let nurseryOption of nurseries; trackBy: trackById">{{ nurseryOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

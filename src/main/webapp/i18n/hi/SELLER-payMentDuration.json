@@ -1,0 +1,10 @@
+{
+  "haryaliApp": {
+    "PayMentDuration": {
+      "null": "",
+      "TEN": "TEN",
+      "FIFTEEN": "FIFTEEN",
+      "THIRTY": "THIRTY"
+    }
+  }
+}

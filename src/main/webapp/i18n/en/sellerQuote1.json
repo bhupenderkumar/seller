@@ -1,0 +1,25 @@
+{
+  "haryaliApp": {
+    "sellerQuote1": {
+      "home": {
+        "title": "Quote 1 S",
+        "createLabel": "Create a new Quote 1",
+        "createOrEditLabel": "Create or edit a Quote 1",
+        "search": "Search for Quote 1",
+        "notFound": "No Quote 1 S found"
+      },
+      "created": "A new Quote 1 is created with identifier {{ param }}",
+      "updated": "A Quote 1 is updated with identifier {{ param }}",
+      "deleted": "A Quote 1 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Quote 1 {{ id }}?"
+      },
+      "detail": {
+        "title": "Quote 1"
+      },
+      "symbol": "Symbol",
+      "price": "Price",
+      "lastTrade": "Last Trade"
+    }
+  }
+}

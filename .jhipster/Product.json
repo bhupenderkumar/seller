@@ -1,0 +1,89 @@
+{
+  "name": "Product",
+  "fields": [
+    {
+      "fieldName": "productName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMinlength": "5",
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "productDescription",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "3999"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required", "min", "max"],
+      "fieldValidateRulesMin": "10",
+      "fieldValidateRulesMax": "1000"
+    },
+    {
+      "fieldName": "approval",
+      "fieldType": "Approval",
+      "fieldValues": "APPROVED,IN_PROGRESS,DECLINED"
+    },
+    {
+      "fieldName": "showStatus",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "productType",
+      "fieldType": "ProductType",
+      "fieldValues": "ARTIFICIAL_PLANT (ARTIFICIAL_PLANT),SEED,INDOOR_PLANT,OUT_DOOR_PLANT,MAINTAINENCE"
+    },
+    {
+      "fieldName": "video",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "productDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "images",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "images"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "feedBack",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "rating"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "nursery",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "nursery",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201005110655",
+  "entityTableName": "product",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "SELLER",
+  "applications": "*",
+  "microserviceName": "SELLER"
+}

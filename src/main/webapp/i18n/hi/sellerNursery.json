@@ -1,0 +1,48 @@
+{
+  "haryaliApp": {
+    "sellerNursery": {
+      "home": {
+        "title": "Nurseries",
+        "createLabel": "नया Nursery बनाएँ",
+        "createOrEditLabel": "Nursery बनाएँ या संपादित करें",
+        "search": "Nursery खोजें",
+        "notFound": "No Nurseries found"
+      },
+      "created": "एक नया Nursery [identifier: {{ param }}] तैयार है",
+      "updated": "एक Nursery [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Nursery [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Nursery [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Nursery"
+      },
+      "nurseryName": "Nursery Name",
+      "houseNo": "House No",
+      "salutation": "Salutation",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "middleName": "Middle Name",
+      "streetNo": "Street No",
+      "districtNo": "District No",
+      "city": "City",
+      "state": "State",
+      "country": "Country",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "addharNo": "Addhar No",
+      "panCardNo": "Pan Card No",
+      "payMentMode": "Pay Ment Mode",
+      "upiId": "Upi Id",
+      "payMentDuration": "Pay Ment Duration",
+      "accountNo": "Account No",
+      "bankIFSC": "Bank IFSC",
+      "bankName": "Bank Name",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "userName": "User Name",
+      "product": "Product",
+      "transactions": "Transactions"
+    }
+  }
+}

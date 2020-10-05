@@ -1,0 +1,35 @@
+{
+  "haryaliApp": {
+    "sellerProduct": {
+      "home": {
+        "title": "Products",
+        "createLabel": "नया Product बनाएँ",
+        "createOrEditLabel": "Product बनाएँ या संपादित करें",
+        "search": "Product खोजें",
+        "notFound": "No Products found"
+      },
+      "created": "एक नया Product [identifier: {{ param }}] तैयार है",
+      "updated": "एक Product [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Product [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Product [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Product"
+      },
+      "productName": "Product Name",
+      "productDescription": "Product Description",
+      "price": "Price",
+      "approval": "Approval",
+      "showStatus": "Show Status",
+      "productType": "Product Type",
+      "video": "Video",
+      "productDate": "Product Date",
+      "updatedDate": "Updated Date",
+      "userName": "User Name",
+      "images": "Images",
+      "rating": "Rating",
+      "nursery": "Nursery"
+    }
+  }
+}

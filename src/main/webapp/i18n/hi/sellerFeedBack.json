@@ -1,0 +1,29 @@
+{
+  "haryaliApp": {
+    "sellerFeedBack": {
+      "home": {
+        "title": "FeedBacks",
+        "createLabel": "नया Feed Back बनाएँ",
+        "createOrEditLabel": "Feed Back बनाएँ या संपादित करें",
+        "search": "Feed Back खोजें",
+        "notFound": "No Feed Backs found"
+      },
+      "created": "एक नया Feed Back [identifier: {{ param }}] तैयार है",
+      "updated": "एक Feed Back [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Feed Back [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Feed Back [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Feed Back"
+      },
+      "rating": "Rating",
+      "userName": "User Name",
+      "userComments": "User Comments",
+      "product": "Product",
+      "help": {
+        "rating": "fieldName"
+      }
+    }
+  }
+}
