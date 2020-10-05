@@ -1,9 +1,22 @@
 {
   "home": {
-    "title": "Welcome, Java Hipster!",
+    "title": "Welcome,  Seller",
     "subtitle": "This is your homepage",
+    "newProduct":"Register New Product",
+    "changePrice":"Change Price",
+    "updateProduct":" Update Existing Product ",
+    "changeImage":"Change Product Image",
+    "changeVideo":" Change Product Video",
+    "requireHelp":"Require Help!",
+    "removeProduct":"Remove Product",
+    "yourProducts":"Your Products",
+    "newNursery" :"New Nursery",
+    "updateNursery":"Update Nursery",
     "logged": {
       "message": "You are logged in as user \"{{username}}\"."
+    },
+    "footer":{
+      "thanksNote":"Thanks for helping us in making this world Green"
     },
     "question": "If you have any question on JHipster:",
     "link": {
